@@ -45,7 +45,7 @@ students = next(reader)
 
 #determine students with less than 3.0 GPA
 for row in students:
-    bminus_student = False
+    below_gpa = False
     #parse rows
     stud_id = students[0]
     firstname = students[2]
@@ -55,7 +55,7 @@ for row in students:
     gpa = int(students[8])
 
     if gpa < 3.0:
-        bminus_student = True
+        below_gpa = True
     
     
 
@@ -79,7 +79,7 @@ for student in students:
     gpa = int(students[8]) 
     
     #check if the GPA is below 3.0. If so, write the record to the outfile
-    if bminus_student: 
+    if below_gpa: 
         outfile.append(f'{stud_id},{firstname},{lastname},{major},{classification},{gpa}')
     
 
